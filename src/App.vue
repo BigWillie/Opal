@@ -1,17 +1,34 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <div class="flex mb-4">
+      <div class="w-1/2 h-12 p-12">
+          <toggle-wrapper @toggle-wrapper-state-change="setToggleWrapperState($event)" :on="toggleWrapperState" toggle-label="This is my label"></toggle-wrapper>
+      </div>
+      <div class="w-1/2 h-12 p-12"></div>
+    </div>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import ToggleWrapper from './components/ToggleWrapper.vue'
 
+// Main App component. Contains examples.
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    ToggleWrapper
+  },
+  data () {
+    return {
+      toggleState: false
+    }
+  },
+  methods: {
+    // @vuese
+    // Receives emitted `toggler-wrapper-state-change` from `ToggleWrapper` component. Updates `toggleWrapperState`
+    setToggleWrapperState (toggleState) {
+      this.toggleState = toggleState
+    }
   }
 }
 </script>
