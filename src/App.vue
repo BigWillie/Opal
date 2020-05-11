@@ -20,14 +20,14 @@ export default {
   },
   data () {
     return {
-      toggleState: false
+      toggleWrapperState: false
     }
   },
   methods: {
     // @vuese
     // Receives emitted `toggler-wrapper-state-change` from `ToggleWrapper` component. Updates `toggleWrapperState`
     setToggleWrapperState (toggleState) {
-      this.toggleState = toggleState
+      this.toggleWrapperState = toggleState
     }
   }
 }
