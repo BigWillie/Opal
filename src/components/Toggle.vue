@@ -2,7 +2,7 @@
 /*
 * @group RENDERLESS
 * Renderless component. Provides toggle functionality. Has one slot which you can use to inject your own markup.
-* <br><br><u>Render</br>Returns `currentState`, `setOn`, `setOff`, `toggle`,`label` for use with v-slot. Use with your own html.
+* <br><br><u>Render</u></br>Returns `currentState`, `setOn`, `setOff`, `toggle`,`label` for use with v-slot. Use with your own html.
 */
 export default {
   name: 'Toggle',
