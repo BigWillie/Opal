@@ -1,10 +1,8 @@
 <script>
 /*
 * @group RENDERLESS
-* Renderless component. Used by ToggleWrapper. Contains methods to control toggle. Has one slot which you can use to inject your own markup.
-* <br>Import and use with your own markup.
-* <br>Broadcasts for use with v-slot: `currentState`, `setOn`, `setOff`, `toggle`,`label`
-* <br><br>Component Tag: `<toggle>`
+* Renderless component. Provides toggle functionality. Has one slot which you can use to inject your own markup.
+* <br><br><u>Render</br>Returns `currentState`, `setOn`, `setOff`, `toggle`,`label` for use with v-slot. Use with your own html.
 */
 export default {
   name: 'Toggle',
