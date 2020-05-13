@@ -1,6 +1,6 @@
 # Toggle
 
-Renderless component. Provides toggle functionality. Has one slot which you can use to inject your own markup. <br><br><u>Render</u></br>Returns `currentState`, `setOn`, `setOff`, `toggle`, `label` for use with v-slot. Use with your own html.
+Renderless component. Provides toggle functionality. Has one slot which you can use to inject your own markup. <br><br><u>Render</u></br>Returns `active`, `setOn`, `setOff`, `toggle`, `label` for use with v-slot. Use with your own html.
 
 ## Props
 
@@ -8,7 +8,8 @@ Renderless component. Provides toggle functionality. Has one slot which you can 
 |Name|Description|Type|Required|Default|
 |---|---|---|---|---|
 |on|Sets initial state of toggle true or false (on/off).|`Boolean`|`false`|-|
-|toggleLabel|String used for toggle's label.|`String`|`false`|-|
+|label|String used for toggle's label.|`String`|`false`|-|
+|body|For any arbitary body text (eg - if using Toggle to build an accordion)|`String`|`false`|-|
 
 <!-- @vuese:Toggle:props:end -->
 
@@ -41,6 +42,7 @@ Renderless component. Provides toggle functionality. Has one slot which you can 
 |setOn|Sets the toggle state to on (true).|-|
 |setOff|Sets the toggle state to off (false).|-|
 |toggle|Toggles the toggle state.|-|
+|emitCurrentState|Private method - not exposed over the scoped slot. Fires the emit.|-|
 
 <!-- @vuese:Toggle:methods:end -->
 
