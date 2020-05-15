@@ -29,29 +29,29 @@ npm run lint
 See [Configuration Reference](https://cli.vuejs.org/config/).
 
 
-Checkboxes
-Radio Buttons
-Dropdown Lists
-List Boxes
-Buttons
-Dropdwn Button
-Toggles
-Text Fields
-Text Input
-Validation
-Date Picker
-Time Picker
-Date and Time Picker
-Search Field
-Breadcrumb
-Pagination
-Tags
-Sliders
-Icons
-Image Carousel
-Notification
-Progress Bar
-Tool Tips
-Message Boxes
-Modal Window
-Accordion
+* Checkboxes
+* Radio Buttons
+* Dropdown Lists
+* List Boxes
+* Buttons
+* Dropdwn Button
+* Toggles
+* Text Fields
+* Text Input
+* Validation
+* Date Picker
+* Time Picker
+* Date and Time Picker
+* Search Field
+* Breadcrumb
+* Pagination
+* Tags
+* Sliders
+* Icons
+* Image Carousel
+* Notification
+* Progress Bar
+* Tool Tips
+* Message Boxes
+* Modal Window
+* Accordion
