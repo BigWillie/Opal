@@ -17,19 +17,27 @@
         </div>
       </div>
     </div>
+        <div class="flex mb-4">
+      <div class="w-1/2 h-12 p-12">
+          <calendar-wrapper></calendar-wrapper>
+      </div>
+       <div class="w-1/2 h-12 p-12"></div>
+      </div>
   </div>
 </template>
 
 <script>
 import ToggleWrapper from './components/ToggleWrapper.vue'
 import AccordionWrapper from './components/AccordionWrapper'
+import CalendarWrapper from './components/CalendarWrapper'
 
 // Main App component. Contains examples.
 export default {
   name: 'App',
   components: {
     ToggleWrapper,
-    AccordionWrapper
+    AccordionWrapper,
+    CalendarWrapper
   },
   data () {
     return {

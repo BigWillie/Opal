@@ -55,3 +55,4 @@ See [Configuration Reference](https://cli.vuejs.org/config/).
 * Message Boxes
 * Modal Window
 * Accordion
+* Validation
