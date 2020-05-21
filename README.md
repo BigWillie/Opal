@@ -1,5 +1,7 @@
 # opal
-A collection of vue renderless components to handle common ui elements. Pre-alpha.. loads of bugs. Stuff will not work.
+A collection of vue renderless components to handle common ui elements. Pre-alpha. Very much a work in progress. I shall flesh this out with information about why and how etc soon.
+
+- Rob
 
 ## Project setup
 ```
