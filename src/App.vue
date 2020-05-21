@@ -1,10 +1,10 @@
 <template>
   <div id="app">
     <div class="flex mb-4">
-      <div class="w-1/2 h-12 p-12">
+      <div class="w-1/2 p-12">
           <toggle-wrapper @toggle-wrapper-state-change="setToggleWrapperState($event)" :on="toggleWrapperState" label="This is my label"></toggle-wrapper>
       </div>
-      <div class="w-1/2 h-12 p-12">
+      <div class="w-1/2 p-12">
         <div  class="border-2">
           <accordion-wrapper
           v-for="(accordion, index) in accordions"
@@ -18,10 +18,10 @@
       </div>
     </div>
         <div class="flex mb-4">
-      <div class="w-1/2 h-12 p-12">
+      <div class="w-1/2 p-12">
           <calendar-wrapper></calendar-wrapper>
       </div>
-       <div class="w-1/2 h-12 p-12"></div>
+       <div class="w-1/2 p-12"></div>
       </div>
   </div>
 </template>

@@ -1,4 +1,5 @@
 # opal
+A collection of vue renderless components to handle common ui elements. Pre-alpha.. loads of bugs. Stuff will not work.
 
 ## Project setup
 ```
