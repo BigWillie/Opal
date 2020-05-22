@@ -30,10 +30,10 @@ function * monthLabelGenerator (start = new Date(2000, 0)) {
 export default {
   name: 'Calendar',
   props: {
-    yearProp: {
+    startYearProp: {
       type: Number
     },
-    monthProp: {
+    startMonthProp: {
       type: Number
     },
     monthLabelsProp: {
@@ -49,6 +49,7 @@ export default {
     }
   },
   mounted () {
+    console.log('mounted')
     if (!this.selectedYear) {
       this.selectedYear = this.currentYear
     }
@@ -68,8 +69,8 @@ export default {
   data () {
     return {
       today: new Date(),
-      selectedYear: this.yearProp,
-      selectedMonth: this.monthProp,
+      selectedYear: this.startYearProp, // assign startYearProp to selected Year. If no yearProp provided, currentYear is set in mounted.
+      selectedMonth: this.startMonthProp,
       months: this.monthLabelsProp,
       dates: []
     }
@@ -81,11 +82,13 @@ export default {
     next () {
       this.selectedYear = (this.selectedMonth === 11) ? this.selectedYear + 1 : this.selectedYear
       this.selectedMonth = (this.selectedMonth + 1) % 12
+      this.$emit('update-month-year', { month: this.selectedMonth, year: this.selectedYear })
       this.updateCalendar(this.selectedMonth, this.selectedYear)
     },
     previous () {
       this.selectedYear = (this.selectedMonth === 0) ? this.selectedYear - 1 : this.selectedYear
       this.selectedMonth = (this.selectedMonth === 0) ? 11 : this.selectedMonth - 1
+      this.$emit('update-month-year', { month: this.selectedMonth, year: this.selectedYear })
       this.updateCalendar(this.selectedMonth, this.selectedYear)
     },
     jump (month, year) {

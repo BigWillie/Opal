@@ -1,25 +1,25 @@
 <template>
-      <calendar @state-change="stateChange($event)" :yearProp="year" :monthProp="month">
+      <calendar @update-month-year="onMonthYearSelected" :startYearProp="year" :startMonthProp="month">
       <template v-slot="{next, previous, jump, calendarGrid, pickDate, monthLabels, yearLabels}">
         <div class="calendarComp">
             <div class="flex mb-4">
                 <div class="w-1/4 pr-2">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="back(previous)">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="previous()">
                         <font-awesome-icon :icon="['fas' , 'caret-left']"></font-awesome-icon>
                     </button>
                 </div>
                 <div class="w-1/4 pr-2">
-                    <select @change="jumpTo(jump)" v-model="month" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                    <select @change="jump(month, year)" v-model="month" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                         <option v-for="(month, index) in monthLabels" :key="month" :value="index">{{month}}</option>
                     </select>
                 </div>
                 <div class="w-1/4 pl-2">
-                        <select @change="jumpTo(jump)" v-model="year" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
+                        <select @change="jump(month, year)" v-model="year" class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500">
                             <option v-for="year in yearLabels" :key="year" :value="year">{{year}}</option>
                         </select>
                 </div>
                 <div class="w-1/4 pr-2">
-                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="forwards(next)">
+                    <button class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded" @click="next()">
                         <font-awesome-icon :icon="['fas' , 'caret-right']"></font-awesome-icon>
                     </button>
                 </div>
@@ -75,6 +75,7 @@ export default {
     Calendar
   },
   mounted () {
+    // for demo puporses - sets our initial year / month
     const today = new Date()
     this.year = today.getFullYear()
     this.month = today.getMonth()
@@ -86,28 +87,13 @@ export default {
     }
   },
   methods: {
-    back (previous) {
-    // Add some extra bits in here - see your notebook
-      previous()
-    },
-    forwards (next) {
-      next()
-    },
-    jumpTo (jump) {
-      jump(this.month, this.year)
-    },
-    stateChange ($event) {
+    onMonthYearSelected ($event) {
     // Emits toggle state to parent (in this case, `toggle-wrapper-state-change`. Required for parent to receive updated toggle state.
-      this.$emit('toggle-wrapper-state-change', $event)
+      this.year = $event.year
+      this.month = $event.month
     },
     cellClass (day) {
       return day ? '' : 'bg-gray-100'
-    }
-  },
-  computed: {
-    // Received prop as a computed property, forcing the component to update
-    selectedMonthYear () {
-      return this.on
     }
   }
 }
